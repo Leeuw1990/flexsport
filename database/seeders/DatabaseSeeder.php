@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
+use App\Models\Day;
 use App\Models\Schema;
 use App\Models\Workout;
 use Illuminate\Database\Seeder;
@@ -17,7 +18,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-
         Workout::create(["category_id" => "1", "name" => "Bench-press"]);
         Workout::create(["category_id" => "2", "name" => "Bent over row"]);
         Workout::create(["category_id" => "3", "name" => "Squats"]);
@@ -34,5 +34,7 @@ class DatabaseSeeder extends Seeder
         Category::create(["name" => "biceps"]);
         Category::create(["name" => "triceps"]);
         Category::create(["name" => "abs"]);
+        //////////////////////////////////////////////////////////////////////
+
     }
 }

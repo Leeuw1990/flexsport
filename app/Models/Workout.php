@@ -13,7 +13,12 @@ class Workout extends Model
 
     public function category(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class, "category_id");
+    }
+
+    public function schema(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Schema::class, "schema_workouts");
     }
 
 }

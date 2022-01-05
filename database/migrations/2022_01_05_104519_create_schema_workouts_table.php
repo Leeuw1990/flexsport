@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDayTable extends Migration
+class CreateSchemaWorkoutsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class CreateDayTable extends Migration
      */
     public function up()
     {
-        Schema::create('day', function (Blueprint $table) {
+        Schema::create('schema_workouts', function (Blueprint $table) {
             $table->id();
-            $table->string("day");
+            $table->foreignId("workout_id");
+            $table->foreignId("schema_id");
+            $table->integer("repetition");
+            $table->integer("weight");
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ class CreateDayTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('day');
+        Schema::dropIfExists('schema_workouts');
     }
 }

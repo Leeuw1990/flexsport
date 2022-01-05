@@ -11,9 +11,13 @@ class Category extends Model
 
     protected $guarded = [];
 
+//    public function getWorkoutByCategory()
+//    {
+//        return
+//    }
+
     public function workout(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Workout::class);
     }
-
 }

@@ -23,5 +23,12 @@
         </div>
     @endif
 
+{{--    @foreach($users as $user)--}}
+{{--        <p>{{ $user->name }}</p>--}}
+{{--        <p>{{ $user->id }}</p>--}}
+{{--        <p>{{ $user->username }}</p>--}}
+{{--        <p>{{ $user->email }}</p>--}}
+{{--    @endforeach--}}
+
     </body>
 </html>
