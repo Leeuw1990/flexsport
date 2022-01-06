@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="schema.css">
 </head>
 <body class="antialiased">
-<h1>Schema</h1>
+<h1>Select</h1>
 <x-navbar/>
 
 <form method="POST" action="#">

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSchemaWorkoutsTable extends Migration
+class CreateSchemaWorkoutTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateSchemaWorkoutsTable extends Migration
      */
     public function up()
     {
-        Schema::create('schema_workouts', function (Blueprint $table) {
+        Schema::create('schema_workout', function (Blueprint $table) {
             $table->id();
             $table->foreignId("workout_id");
             $table->foreignId("schema_id");
@@ -30,6 +30,6 @@ class CreateSchemaWorkoutsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('schema_workouts');
+        Schema::dropIfExists('schema_workout');
     }
 }

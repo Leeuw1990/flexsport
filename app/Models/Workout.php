@@ -18,7 +18,7 @@ class Workout extends Model
 
     public function schema(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
-        return $this->belongsToMany(Schema::class, "schema_workouts");
+        return $this->belongsToMany(Schema::class, "schema_workout", "workout_id", "schema_id");
     }
 
 }

@@ -6,6 +6,7 @@
     <p>{{ $exercise->name }}</p>
     <input name="workout_id" value="{{ $exercise->id }}">
 @endforeach
+
     <label for="repetition">
         Herhalingen
     </label>

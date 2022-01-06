@@ -16,6 +16,6 @@
 
 <ul>
 @foreach($schemas as $schema)
-        <li><a href="/select/{id} {{ $schema->id }}">{{ $schema->day }}</a></li>
+        <li><a href="/select/{id} {{ $schema->day }}">{{ $schema->day }}</a></li>
 @endforeach
 </ul>

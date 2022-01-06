@@ -35,6 +35,25 @@ class SchemaController extends Controller
 
     }
 
+    public function createExercise(Schema $schema)
+    {
+//        dd($d);
+//        request()->validate([
+//            "repetition" => "required",
+//            "weight" => "required"
+//        ]);
+
+
+        $schema->workout()->create([
+           "repetition" => \request("repetition"),
+            "weight" => \request("weight"),
+            "schema_id" => \request(1),
+            "workout_id" => \request(1)
+        ]);
+
+
+    }
+
 //    public function create(Schema $schema)
 //    {
 //        $schema->workout()->create([
@@ -45,11 +64,14 @@ class SchemaController extends Controller
 //
 //    }
 
-    public function getExercise($id)
+
+
+    public function getExercise(Request $request)
     {
+        $getId = substr($request->id, -1);
         return view("exercise.exercise", [
-            "exercises" => Workout::all()->where("id", $id)
+            "exercises" => Workout::all()->where("id", $getId)
         ]);
     }
-    //
+
 }

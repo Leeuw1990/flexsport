@@ -30,7 +30,7 @@ Route::post("schema", [SchemaController::class, "create"]);
 
 Route::get("exercise/{id}", [SchemaController::class, "getExercise"]);
 
-Route::post("exercise", [SchemaController::class, "create"]);
+Route::post("exercise", [SchemaController::class, "createExercise"]);
 
 
 
