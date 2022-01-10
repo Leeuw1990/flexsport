@@ -1,21 +1,38 @@
-<h1>Select a day</h1>
+<h1>Maak schema</h1>
 
-<form method="POST" name="schema" action="/schema">
+<a href="/">Ga terug</a>
+
+<form method="POST" action="/schema">
     @csrf
-    <label for="day">Maak schema</label>
-        <select name="day">
-            <option value="maandag">Maandag</option>
-        </select>
-
-    <button
-        type="submit"
+    <label for="username">
+        Schema naam
+    </label>
+    <input
+        type="text"
+        name="day"
+        id="day"
+        required
     >
-        Create
-    </button>
-</form>
 
-<ul>
-@foreach($schemas as $schema)
-        <li><a href="/select/{id} {{ $schema->day }}">{{ $schema->day }}</a></li>
-@endforeach
-</ul>
+{{--    <label for="day">Dag</label>--}}
+{{--    <select name="day">--}}
+{{--        <option value="Maandag">Maandag</option>--}}
+{{--        <option value="Dinsdag">Dinsdag</option>--}}
+{{--        <option value="Woensdag">Woensdag</option>--}}
+{{--        <option value="Donderdag">Donderdag</option>--}}
+{{--        <option value="Vrijdag">Vrijdag</option>--}}
+{{--        <option value="Zaterdag">Zaterdag</option>--}}
+{{--        <option value="Zondag">Zondag</option>--}}
+{{--    </select>--}}
+
+
+            <ul>
+        @foreach($exercises as $key => $exercise)
+                    <li>{{ $exercise->name }}</li>
+                    <li><input type="checkbox"  name="workout_id[{{$key}}]" value="{{ $exercise->id }}"></li>
+        @endforeach
+            </ul>
+
+    <button type="submit">Maak</button>
+
+</form>

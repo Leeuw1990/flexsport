@@ -24,15 +24,13 @@ Route::get("login", [SessionsController::class, "create"])->middleware("guest");
 
 Route::get("schema", [SchemaController::class, "schema"]);
 
-Route::get("select/{id}", [SchemaController::class, "select"]);
-
 Route::post("schema", [SchemaController::class, "create"]);
 
-Route::get("exercise/{id}", [SchemaController::class, "getExercise"]);
+Route::post("your/{id}", [SchemaController::class, "delete"]);
 
-Route::post("exercise", [SchemaController::class, "createExercise"]);
+Route::get("your", [SchemaController::class, "your"]);
 
-
+Route::get("getworkout/{id}", [SchemaController::class, "getById"]);
 
 
 

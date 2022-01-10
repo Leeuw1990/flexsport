@@ -11,14 +11,14 @@ class Schema extends Model
 
     protected $guarded = [];
 
-    public function user(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function user(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
-        return $this->hasMany(Schema::class);
+        return $this->hasOne(User::class);
     }
 
-    public function workout(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    public function workouts(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
-        return $this->belongsToMany(Workout::class, "schema_workout", "schema_id", "workout_id");
+        return $this->belongsToMany(Workout::class);
     }
 
 }
