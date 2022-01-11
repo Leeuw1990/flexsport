@@ -11,6 +11,13 @@ use Illuminate\Support\Facades\DB;
 class SchemaController extends Controller
 {
 
+    public function update($id)
+    {
+        return view("updatesingleworkout.updatesingleworkout",[
+            "updates" => Schema::find($id)->workouts()->get()
+            ]);
+    }
+
     public function getById($id)
     {
         return view("singleworkout.singleworkout", [
@@ -72,6 +79,7 @@ class SchemaController extends Controller
             //$workout = Workout::find(1);
             // workout_id word hiermee aangemaakt
             $schemas->workouts()->attach(request("workout_id"));
+//            $schemas->workouts()->attach(request()->reps[0]);
 
             return redirect("/");
 

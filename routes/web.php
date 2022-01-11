@@ -9,9 +9,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, "home"]);
 
-// Kijkt naar de url of die klopt, zo ja? dan wordt de workoutcontroller aangeroepen, Tussen haakjes is de functie die in de controller staat.
-
-
 Route::get("register", [RegisterController::class, "create"])->middleware("guest");
 
 Route::post("register", [RegisterController::class, "store"])->middleware("guest");
@@ -32,12 +29,10 @@ Route::get("your", [SchemaController::class, "your"]);
 
 Route::get("getworkout/{id}", [SchemaController::class, "getById"]);
 
+Route::get("/updateworkout/{id}", [SchemaController::class, "update"]);
 
 
-//Route::get('/workout', function () {
-//    return view('workout', [
-//        "workouts" => Workout::all()
-//    ]);
-//});
+
+
 
 

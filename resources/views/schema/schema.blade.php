@@ -13,7 +13,6 @@
         id="day"
         required
     >
-
 {{--    <label for="day">Dag</label>--}}
 {{--    <select name="day">--}}
 {{--        <option value="Maandag">Maandag</option>--}}
@@ -24,12 +23,10 @@
 {{--        <option value="Zaterdag">Zaterdag</option>--}}
 {{--        <option value="Zondag">Zondag</option>--}}
 {{--    </select>--}}
-
-
             <ul>
         @foreach($exercises as $key => $exercise)
                     <li>{{ $exercise->name }}</li>
-                    <li><input type="checkbox"  name="workout_id[{{$key}}]" value="{{ $exercise->id }}"></li>
+                    <input type="checkbox"  name="workout_id[{{$key}}]" value="{{ $exercise->id }}">
         @endforeach
             </ul>
 

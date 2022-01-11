@@ -9,5 +9,8 @@
             <input type="hidden" name="workout_id" value="{{ $workout->pivot->workout_id }}">
         <button type="submit">Delete</button>
 </form>
+    <form>
+        <a href="/updateworkout/{{ $workout->id  }}"><button type="button">Update</button></a>
+    </form>
 
 @endforeach
